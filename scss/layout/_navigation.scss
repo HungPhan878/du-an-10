@@ -1,0 +1,62 @@
+@use "../abstracts";
+
+.nav {
+  $margin: 26px;
+
+  position: relative;
+  padding: 20px 0;
+  .row {
+    justify-content: space-between;
+  }
+
+  &-menu {
+    display: none;
+  }
+
+  &-info {
+    @include abstracts.flexGap(10px);
+    cursor: pointer;
+
+    &__menu {
+      margin-top: 4px;
+    }
+  }
+
+  &-info__letters {
+    @include abstracts.flexCenter();
+    column-gap: 10px;
+  }
+
+  &-info__letter {
+    --circle: 32px;
+
+    @include abstracts.flexCenter();
+
+    width: var(--circle);
+    height: var(--circle);
+    border: 1px solid;
+    border-color: rgba($color: abstracts.$primary-color, $alpha: 0.2);
+    border-radius: 50%;
+  }
+
+  &-info__gmail {
+    color: abstracts.$text-color;
+    font-size: 2.2rem;
+    font-weight: 500;
+    line-height: 1.36; /* 136.364% */
+    text-decoration-line: underline;
+    display: none;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: calc(100% + $margin);
+    margin-left: calc($margin / 2 * -1);
+    margin-right: calc($margin / 2 * -1);
+    height: 1px;
+    background-color: #d6d3e2;
+  }
+}

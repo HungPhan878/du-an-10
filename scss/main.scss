@@ -1,44 +1,8 @@
 // base
 @use "base";
-@use "pages";
-@use "layout";
+// components button ...
 @use "components";
-// components
-@use "vendors";
-
-::before,
-::after,
-* {
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-  font-size: 1.6rem;
-  font-family: "DM Sans", sans-serif;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-input,
-textarea,
-button,
-select,
-a {
-  -webkit-tap-highlight-color: transparent;
-}
-
-button,
-select,
-input,
-textarea {
-  font-family: inherit;
-  font-size: inherit;
-}
+@use "layout";
+@use "pages";
+// frame and responsive
+@use "vendors" with($grid-spacer-width: 40px);

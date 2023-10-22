@@ -1,0 +1,102 @@
+@use "../abstracts";
+
+.footer {
+  margin-top: 120px;
+  &-top {
+    text-align: center;
+    margin-bottom: 116px;
+  }
+
+  &-info {
+    justify-content: center;
+    margin-top: 58px;
+
+    &__letter {
+      --circle: 46px;
+    }
+
+    &__letter-icon {
+      width: 24px;
+      height: 16px;
+    }
+
+    &__gmail {
+      display: block;
+    }
+  }
+
+  &-nav {
+    margin-top: 20px;
+    @include abstracts.flexCenter();
+    justify-content: space-between;
+
+    &__link {
+      line-height: 1.25;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &-bottom {
+    position: relative;
+    padding: 20px 0 30px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      display: block;
+      width: calc(100% + 40px);
+      margin-left: -20px;
+      margin-right: -20px;
+      height: 1px;
+      //   width: 100vw;
+      background-color: rgb(12, 7, 32, 0.2);
+    }
+  }
+
+  &-copyright {
+    color: #525771;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.67; /* 166.667% */
+    white-space: nowrap;
+    opacity: 0.6;
+  }
+
+  &-policy {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    @include abstracts.flexGap(36px);
+
+    &__label {
+      position: relative;
+
+      & + &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -13px;
+        transform: translateY(-50%);
+        display: inline-block;
+        width: 1px;
+        height: calc(100% - 16px);
+
+        background: rgb(82, 87, 113, 0.6);
+      }
+    }
+
+    &__link {
+      @extend .footer-copyright;
+      letter-spacing: -0.54px;
+    }
+  }
+}
+
+//  ngay mai 15/10/2023 neu con song thi thuc hien nv nay thi:
+// 1. lam responsive pc cua bai nay nha cho xong nha. ok
+//
